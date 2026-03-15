@@ -5,7 +5,8 @@ function Header() {
   const navigate = useNavigate();
   return (
     <header className="header" onClick={() => navigate('/')}>
-      <h1>Ripped and Rugged</h1>
+      <h1>Mountain Man</h1>
+      <h2>Fitness</h2>
     </header>
   )
 }

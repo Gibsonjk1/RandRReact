@@ -4,7 +4,8 @@ Add a description of your project here.
 
 ## Instructions for Build and Use
 
-[Software Demo](https://youtu.be/pGZebZrmOXY)
+[Software Demo](https://youtu.be/CE2uz-WXaP8)
+[Github Repo](https://github.com/Gibsonjk1/RandRReact)
 
 Steps to build and/or run the software:
 To run this project, you will be required to run two separate windows of vs code.
