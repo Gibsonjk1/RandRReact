@@ -1,31 +1,36 @@
+import type { User } from '../interfaces/User';
 import './exercise.css';
 import { useState, useEffect } from 'react';
+import exerciseConstructor  from "../Helpers/constructExerciseSession.ts"
 
-// Example fetching data on component mount
-function DataComponent() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch('/api/exercise')
-      .then(response => response.json())
-      .then(data => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch(error => console.error('Error:', error));
-  }, []);
-
-  if (loading) return <div>Loading...</div>;
-  return <div>Data: {JSON.stringify(data)}</div>;
+interface HomeProps {
+  userData: User | null;
 }
 
-export default function Exercise() {
+
+
+export default function Exercise({ userData }: HomeProps) {
+  function ExerciseList() {
+    const [exercises, setExercises] = useState<string>('Loading exercises...');
+    useEffect(() => {
+        const fetchExercises = async () => {
+            const res = await fetch("/api/exercise");
+            const exerciseData = await res.json();
+          const exerciseSession = exerciseConstructor(exerciseData, userData);
+
+            setExercises(exerciseSession);
+        }
+        fetchExercises();
+    }, []);
+
+    return <div dangerouslySetInnerHTML={{ __html: exercises }} />;
+}
     return (
         <div>
             <h1>Exercise</h1>
             <p>List of Exercises goes here</p>
-            <DataComponent />
+            <ExerciseList />
         </div>
     );
 }
