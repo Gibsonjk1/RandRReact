@@ -26,13 +26,8 @@ export interface StrengthProfile {
 }
 
 export interface MobilityProfile {
-  shoulders: number
-  elbows: number
-  wrists: number
-  thoracicSpine: number
-  hips: number
-  knees: number
-  ankles: number
+  upperBody: Record<string, number>
+  lowerBody: Record<string, number>
   balance: number
 }
 

@@ -1,0 +1,11 @@
+.home {
+    color: #1B1725;
+}
+
+.home img {
+    width: 80%;
+    max-width: 80%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}

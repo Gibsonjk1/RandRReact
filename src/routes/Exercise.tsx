@@ -1,7 +1,8 @@
 import type { User } from '../interfaces/User';
 import './exercise.css';
 import { useState, useEffect } from 'react';
-import exerciseConstructor  from "../Helpers/constructExerciseSession.ts"
+import exerciseConstructor from '../Helpers/constructExerciseSession';
+import exerciseHeader from '../assets/exerciseHeader.jpg';
 
 
 interface HomeProps {
@@ -18,6 +19,7 @@ export default function Exercise({ userData }: HomeProps) {
             const res = await fetch("/api/exercise");
             const exerciseData = await res.json();
           const exerciseSession = exerciseConstructor(exerciseData, userData);
+          console.log(exerciseSession);
 
             setExercises(exerciseSession);
         }
@@ -27,9 +29,11 @@ export default function Exercise({ userData }: HomeProps) {
     return <div dangerouslySetInnerHTML={{ __html: exercises }} />;
 }
     return (
-        <div>
+        <div className='exercise'>
             <h1>Exercise</h1>
-            <p>List of Exercises goes here</p>
+            <div className='exerciseHeader'>
+                <img src={exerciseHeader} alt="Exercise Header" />
+            </div>
             <ExerciseList />
         </div>
     );

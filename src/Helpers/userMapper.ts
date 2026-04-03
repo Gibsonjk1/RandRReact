@@ -8,15 +8,15 @@ export interface ApiUser {
   _id: string
   profile: any
   strengthProfile: any
-  mobility: any
-preferences: any
-    exercisePreferences: any
-    restrictions: any
-    rehabState: any
-    activity: any
-    active: boolean
-    createdAt: string
-    updatedAt: string
+  mobilityProfile: any
+  preferences: any
+  exercisePreferences: any
+  restrictions: any
+  rehabState: any
+  activity: any
+  active: boolean
+  createdAt: string
+  updatedAt: string
 }
 
 
@@ -38,7 +38,7 @@ export function convertApiUserToDomain(apiUser: ApiUser): User {
       lowerBody: convertStrengthArray(apiUser.strengthProfile.lowerBody)
     },
 
-    mobility: apiUser.mobility,
+    mobility: apiUser.mobilityProfile,
 
     preferences: apiUser.preferences,
 

@@ -1,0 +1,33 @@
+.exercise {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #1B1725;
+}
+
+.exercise h1 {
+    margin-bottom: 20px;
+}
+.exercise p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+.exerciseHeader {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+.exerciseHeader img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 600px;
+}
